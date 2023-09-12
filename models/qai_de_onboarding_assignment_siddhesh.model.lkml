@@ -10,8 +10,25 @@ datagroup: qai_de_onboarding_assignment_siddhesh_default_datagroup {
 
 persist_with: qai_de_onboarding_assignment_siddhesh_default_datagroup
 
+explore: test {}
+
+explore: demo {
+  join: demo1 {
+    type: inner
+    sql_on: ${demo.id} = ${demo1.id} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: session_level_data_of_dialogflow_cleaned_logs {}
 
-explore: test_dialogflow_agent {}
+explore: test_dialogflow_agent {
 
-explore: dialogflow_cleaned_logs {}
+}
+
+explore: dialogflow_cleaned_logs {
+  access_filter: {
+    field: dialogflow_cleaned_logs.platform
+    user_attribute: platform_rls
+  }
+}
