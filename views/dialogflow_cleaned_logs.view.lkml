@@ -48,6 +48,7 @@ view: dialogflow_cleaned_logs {
 
   dimension: sentiment_analysis_score {
     type: number
+    required_access_grants: [sentiment_filter]
     sql: ${TABLE}.sentimentAnalysisScore ;;
   }
 

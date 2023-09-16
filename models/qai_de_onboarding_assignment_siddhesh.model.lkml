@@ -32,3 +32,8 @@ explore: dialogflow_cleaned_logs {
     user_attribute: platform_rls
   }
 }
+
+access_grant: sentiment_filter {
+  user_attribute: platform_rls
+  allowed_values: ["voice"]
+}
